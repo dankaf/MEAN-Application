@@ -15,3 +15,9 @@ exports.renderPhotos = function(req, res) {
     user: JSON.stringify(req.user)
   });
 };
+
+exports.renderAnnouncementsAndStories = function(req, res) {
+  res.render('announcements-and-stories', {
+    user: JSON.stringify(req.user)
+  });
+};

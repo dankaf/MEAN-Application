@@ -10,12 +10,11 @@
 	<h1>TROOP 832</h1>
 	<ul>
     <li><a href="/">ABOUT US</a></li>
-		<li><a href="#">ANNOUNCEMENTS AND STORIES</a></li>
+		<li><a href="/announcements-and-stories">ANNOUNCEMENTS AND STORIES</a></li>
 		<li><a href="/members">TROOP 832 MEMBERS</a></li>
 		<li><a href="#">CALENDAR SCHEDULE</a></li>
 		<li><a href="/photos">PHOTO ARCHIVE</a></li>
 		<li><a href="/contact">CONTACT US</a></li>
-		<li><a href="/signin">hellosflk</a></li>
 	</ul>
 
 	<article id="title">
@@ -47,6 +46,7 @@
 		</p>
 	</article>
 	<!-- Render the user object -->
+
 	<script type="text/javascript">
 		window.user = <%- user || 'null' %>;
 	</script>
@@ -54,7 +54,7 @@
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
 	<!-- Load local libraries -->
-	<script type="text/javascript" src="/lib/angular/angular.js"></script>
+	<script type="text/javascript" src="/lib/angular/angular.js">console.log(5+6);</script>
 	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
 	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
 
