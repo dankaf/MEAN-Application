@@ -4,6 +4,9 @@ angular.module('example').config(['$routeProvider',
     when('/', {
       templateUrl: 'example/views/example.client.view.html'
     }).
+    when('/articles', {
+      templateUrl: 'articles/views/list-articles.client.view.html'
+    }).
     otherwise({
       redirectTo: '/'
     });
