@@ -3,13 +3,4 @@ module.exports = function(app) {
       static = require('../controllers/static-pages.server.controller');
 
   app.get('/', index.render);
-
-  app.get('/contact', static.renderContact);
-
-  app.get('/members', static.renderMembers);
-
-  app.get('/photos', static.renderPhotos);
-
-  app.get('/announcements-and-stories', static.renderAnnouncementsAndStories);
-
 };
