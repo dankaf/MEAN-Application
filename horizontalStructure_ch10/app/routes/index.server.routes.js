@@ -10,4 +10,6 @@ module.exports = function(app) {
 
   app.get('/photos', static.renderPhotos);
 
+  app.get('/announcements-and-stories', static.renderAnnouncementsAndStories);
+
 };

@@ -6,47 +6,34 @@
 </head>
 <body>
 	<!-- Render AngularJS views  -->
-	<section ng-view></section>
+	<div data-ng-show="!authentication.user">
+    <a href="/signup">Signup</a>
+    <a href="/signin">Signin</a>
+  </div>
+  <div data-ng-show="authentication.user">
+    <h1>Hello <span data-ng-bind="authentication.user.fullName"></span>
+    </h1>
+    <a href="/signout">Signout</a>
+    <ul>
+      <li><a href="/#!/chat">Chat</a></li>
+      <li><a href="/#!/articles">List Articles</a></li>
+      <li><a href="/#!/articles/create">Create Articles</a></li>
+    </ul>
+  </div>
+
 	<h1>TROOP 832</h1>
 	<ul>
     <li><a href="/">ABOUT US</a></li>
-		<li><a href="#">ANNOUNCEMENTS AND STORIES</a></li>
+		<li><a href="/#!/articles">ANNOUNCEMENTS AND STORIES</a></li>
 		<li><a href="/members">TROOP 832 MEMBERS</a></li>
 		<li><a href="#">CALENDAR SCHEDULE</a></li>
 		<li><a href="/photos">PHOTO ARCHIVE</a></li>
 		<li><a href="/contact">CONTACT US</a></li>
-		<li><a href="/signin">hellosflk</a></li>
 	</ul>
 
-	<article id="title">
-		<h1>About Troop 832</h1>
-		<p>
-			A scout is never taken by surprise; he knows exactly what to do when anything happens.
-		</p>
-	</article>
-
-	<div class="bar"></div>
-	<article class="bod">
-		<h2>Our Goal</h2>
-		<p>
-			Our goal is to provide an environment that challenges our Scouts both mentally and physically,
-			instilling the core values of the Scout Law and Code. Scouts in Troop 832 are no strangers to
-			independent achievement and growth thanks to our myriad of activities, bimonthly meetings, and
-			advancement ceremonies. Troop 832 is dedicated to moulding the leaders of tomorrow through promoting
-			discipline, creating independend individuals, and forming positive bonds that will last a lifetime.
-		</p>
-	</article>
-
-	<article class="bod">
-		<h2>History</h2>
-		<p>
-			Our troop, founded in 2013 at the Church of the Good Shepherd in Arcadia, CA, arose with the same
-			principles as the first Boy Scouts in 1908. Formerly Troop 138, our troop was built with one goal
-			in mind: to transform today's ordinary teenagers into tomorrow's leaders. We stand today, striving
-			to uphold the values established by Sir Baden-Powell
-		</p>
-	</article>
+	<section ng-view></section>
 	<!-- Render the user object -->
+
 	<script type="text/javascript">
 		window.user = <%- user || 'null' %>;
 	</script>
@@ -54,7 +41,7 @@
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
 	<!-- Load local libraries -->
-	<script type="text/javascript" src="/lib/angular/angular.js"></script>
+	<script type="text/javascript" src="/lib/angular/angular.js">console.log(5+6);</script>
 	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
 	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
 
