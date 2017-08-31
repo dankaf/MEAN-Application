@@ -2,13 +2,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
     function($scope, $routeParams, $location, Authentication, Articles, infinite-scroll) {
     	// Expose the Authentication service
         $scope.authentication = Authentication;
-        $scope.articlesTemp = [];
-        $scope.article = {};
 
-        $scope.busy = true;
-        $scope.allData = [];
-        var page = 0;
-        var step = 10;
         // Create a new controller method for creating new articles
         $scope.create = function() {
         	// Use the form fields to create a new article $resource object
@@ -27,39 +21,9 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
             });
         };
 
-        // Create a new controller method for retrieving a list of articles
         $scope.find() = function() {
-          $scope.articles = Articles.query();
-          $scope.articlesTemp = scope.articles;
-        };
-
-
-        $scope.getALL() = function() {
         	// Use the article 'query' method to send an appropriate GET request
-            //$scope.articles = Articles.query();
-            console.log("hello");
-            $scope.articlesTemp = [];
-            $scope.allData = Articles.query();
-            $scope.nextPage();
-            $scope.busy = false;
-        };
-
-        $scope.nextPage() = function() {
-          var articlesLength = $scope.articlesTemp.length;
-          console.log(3+4);
-          System.out.println(3+4);
-          if ($scope.busy){
-            return;
-          }
-          $scope.busy = true;
-
-          $scope.articlesTemp = $scope.articlesTemp.concat($scope.allData.splice(page*step, step));
-          page++;
-          $scope.busy = false;
-
-          if($scope.allData.length === 0){
-            $scope.noMoreData = true;
-          }
+            $scope.aricles = Articles.query();
         };
 
         // Create a new controller method for retrieving a single article
@@ -102,9 +66,5 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
                 });
             }
         };
-
-        $scope.loadMore() = function(article) {
-          $scope.images = []
-        }
     }
 ]);
