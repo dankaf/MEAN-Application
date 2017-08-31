@@ -1,0 +1,45 @@
+{
+  "name": "angular-infinitescroll",
+  "version": "1.0.3",
+  "authors": [
+    "Luke Madera <luke.madera@gmail.com>"
+  ],
+  "description": "AngularJS infinite scroll (more robust) directive",
+  "keywords": [
+    "angular",
+    "AngularJS",
+    "infinite",
+    "scroll",
+    "infinite-scroll",
+    "infinitescroll",
+    "angular-infinitescroll",
+    "angular-infinite-scroll",
+    "directive",
+    "mobile"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.2",
+    "angular-animate": "~1.2.2",
+    "angular-sanitize": "~1.2.2",
+    "angular-touch": "~1.2.2"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/jackrabbitsgroup/angular-infinitescroll",
+  "_release": "1.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.3",
+    "commit": "80a88f3ee4a4fb2e2d6894694e68f3e206f36016"
+  },
+  "_source": "https://github.com/jackrabbitsgroup/angular-infinitescroll.git",
+  "_target": "~1.0.3",
+  "_originalSource": "angular-infinitescroll"
+}

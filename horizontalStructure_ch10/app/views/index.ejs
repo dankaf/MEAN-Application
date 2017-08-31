@@ -17,7 +17,7 @@
 		<li><a href="/#!/photos">PHOTO ARCHIVE</a></li>
 		<li><a href="/#!/contact">CONTACT US</a></li>
 	</ul>
-
+ <script>console.log(3+4);</script>
 	<section ng-view></section>
 	<!-- Render the user object -->
 
@@ -28,9 +28,12 @@
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
 	<!-- Load local libraries -->
-	<script type="text/javascript" src="/lib/angular/angular.js">console.log(5+6);</script>
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
 	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
 	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+	<script type="text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/lib/angular/angular.min.js"></script>
+	<script type="text/javascript" src="/lib/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
 
 	<!-- Load the articles module -->
 	<script type="text/javascript" src="/articles/articles.client.module.js"></script>
@@ -47,6 +50,7 @@
 	<script type="text/javascript" src="/users/users.client.module.js"></script>
 	<script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
 
+	<!-- Load the chat module -->
 	<script type="text/javascript" src="/chat/chat.client.module.js"></script>
 	<script type="text/javascript" src="/chat/services/socket.client.service.js"></script>
 	<script type="text/javascript" src="/chat/controllers/chat.client.controller.js"></script>
