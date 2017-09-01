@@ -21,12 +21,21 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
             });
         };
 
-        // Create a new controller method for retrieving a list of articles
-        $scope.find = function() {
-        	// Use the article 'query' method to send an appropriate GET request
-            $scope.articles = Articles.query();
-        };
 
+        //$scope.find = function() {
+          //$scope.articles = Articles.query();
+          //console.log($scope.articles);
+        //};
+        $scope.find = Articles.query().$promise.then(function(data) {
+          $scope.articles = data;
+          //$scope.data = $scope.articles.slice(0, 10);
+          //console.log($scope.articles);
+          //console.log($scope.articles[0]);
+          //return $scope.articles;
+        });//.$promise.then($scope.getMoreData = function($scope.articles))
+        //console.log($scope.articles);
+        //console.log($scope.find);
+        //console.log($scope.find());
         // Create a new controller method for retrieving a single article
         $scope.findOne = function() {
         	// Use the article 'get' method to send an appropriate GET request
@@ -34,6 +43,11 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
                 articleId: $routeParams.articleId
             });
         };
+
+        //$scope.find.$promise.then(console.log($scope.articles));
+        //$scope.getMoreData = function() {
+        //  $scope.data = temp.slice(0, $scope.data.length + 10);
+        //};
 
         // Create a new controller method for updating a single article
         $scope.update = function() {

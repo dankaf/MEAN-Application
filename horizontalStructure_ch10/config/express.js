@@ -16,6 +16,7 @@ module.exports = function(db) {
   var server = http.createServer(app);
   var io = socketio.listen(server);
   app.use(express.static('./public'));
+  app.use('/css', express.static('./public/css'));
   if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
   } else if (process.env.NODE_ENV === 'production') {

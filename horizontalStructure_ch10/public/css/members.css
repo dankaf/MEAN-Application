@@ -1,0 +1,29 @@
+.member {
+  overflow: auto;
+  width: 200px;
+  display: inline-block;
+  margin: 31px;
+  padding: 0;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.pic {
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+}
+
+@media (max-width: 500px) {
+      body {
+        background: rgba(30,20,20,1);
+        color:white;
+      }
+      h1 {
+        font-size: 36px;
+      }
+      li {
+        display: block;
+        padding: 5px;
+      }
+    }

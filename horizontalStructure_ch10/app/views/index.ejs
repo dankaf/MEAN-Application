@@ -2,13 +2,77 @@
 <html xmlns:ng="http://angularjs.org">
 <head>
 	<!-- Use the 'title' property to render a page title  -->
-	<title><%= title %></title>
-</head>
-<body>
-	<!-- Render AngularJS views  -->
-	<section ng-include="'pages/views/example.client.view.html'"></section>
 
+	<title><%= title %></title>
+	<!-- <link rel="stylesheet" type="css" href="css/index.css" /> -->
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+	  <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+<style>
+body {
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	margin: 0 auto;
+}
+header {
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 20px;
+	text-align: center;
+	color:white;
+	background: url("../images/troop832.jpg");
+	background-size: cover
+}
+h1 {
+	font-size: 70px;
+}
+ul {
+	padding: 20px;
+	background: rgba(0,0,0,.75);
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 2px;
+}
+li {
+	display: inline;
+	padding: 20px;
+}
+a {
+	text-decoration:none;
+	color:white;
+}
+a:hover {
+	color: rgba(200,240,255,.6);
+}
+
+.bod {
+	margin: 0 auto;
+	text-align: left;
+	width: 1600px;
+}
+
+#title {
+	margin-left:75px;
+	margin-top: 75px;
+}
+
+#title h1 {
+	font-size: 50px;
+	letter-spacing: 10px;
+}
+
+#title h2{
+	font-size: 20px;
+	letter-spacing: 4px;
+}
+
+</style>
+</head>
+<body style="margin: 0;">
+	<!-- Render AngularJS views  -->
+	<header>
+	<section ng-include="'pages/views/example.client.view.html'"></section>
+	<br><br><br><br><br><br><br>
 	<h1>TROOP 832</h1>
+	<br><br><br><br><br><br><br>
 	<ul>
     <li><a href="/">ABOUT US</a></li>
 		<li><a href="/#!/articles">ANNOUNCEMENTS AND STORIES</a></li>
@@ -17,7 +81,7 @@
 		<li><a href="/#!/photos">PHOTO ARCHIVE</a></li>
 		<li><a href="/#!/contact">CONTACT US</a></li>
 	</ul>
-
+	</header>
 	<section ng-view></section>
 	<!-- Render the user object -->
 
@@ -28,9 +92,10 @@
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 
 	<!-- Load local libraries -->
-	<script type="text/javascript" src="/lib/angular/angular.js">console.log(5+6);</script>
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
 	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
 	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+	<script type="text/javascript" src="/lib/angular-route-styles/route-styles.js"></script>
 
 	<!-- Load the articles module -->
 	<script type="text/javascript" src="/articles/articles.client.module.js"></script>
