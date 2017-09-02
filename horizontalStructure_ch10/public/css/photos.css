@@ -1,5 +1,8 @@
+.bod {
+  margin-bottom: 50px;
+}
 .bar {
-  width: 1500px;
+  width: 1400px;
   height: 1px;
   background-color: rgba(0,0,0,.2);
   margin: 50px 50px 70px 65px;

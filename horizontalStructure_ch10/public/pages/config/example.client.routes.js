@@ -21,6 +21,10 @@ angular.module('example').config(['$routeProvider',
       templateUrl: 'pages/views/photos.client.view.html',
       css: 'css/photos.css'
     }).
+    when('/calendar', {
+      templateUrl: 'pages/views/calendar.client.view.html',
+      css: 'css/calendar.css'
+    }).
     otherwise({
       redirectTo: '/'
     });
