@@ -2,7 +2,8 @@ angular.module('articles').config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
 		when('/articles', {
-			templateUrl: 'articles/views/list-articles.client.view.html'
+			templateUrl: 'articles/views/list-articles.client.view.html',
+			css: '../../css/articles.css'
 		}).
 		when('/articles/create', {
 			templateUrl: 'articles/views/create-article.client.view.html'
@@ -14,4 +15,4 @@ angular.module('articles').config(['$routeProvider',
 			templateUrl: 'articles/views/edit-article.client.view.html'
 		});
 	}
-]); 
+]);

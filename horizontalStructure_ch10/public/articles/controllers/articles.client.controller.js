@@ -3,6 +3,11 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
     	// Expose the Authentication service
         $scope.authentication = Authentication;
 
+        $scope.busy = true;
+        $scope.allData = [];
+        $scope.articles = [];
+        var page = 0;
+        var step = 10;
         // Create a new controller method for creating new articles
         $scope.create = function() {
         	// Use the form fields to create a new article $resource object
@@ -27,7 +32,11 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
           //console.log($scope.articles);
         //};
         $scope.find = Articles.query().$promise.then(function(data) {
-          $scope.articles = data;
+          $scope.allData = data;
+          console.log($scope.allData[0].created);
+          $scope.busy = false;
+          $scope.nextPage();
+
           //$scope.data = $scope.articles.slice(0, 10);
           //console.log($scope.articles);
           //console.log($scope.articles[0]);
@@ -37,6 +46,24 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
         //console.log($scope.find);
         //console.log($scope.find());
         // Create a new controller method for retrieving a single article
+
+        $scope.nextPage = function() {
+          var articlesLength = $scope.articles.length;
+
+          if ($scope.busy) {
+            return;
+          }
+
+          $scope.busy = true;
+          $scope.articles = $scope.articles.concat($scope.allData.splice(page*step, step));
+          console.log($scope.articles[0].created);
+          page++;
+          $scope.busy = false;
+
+          if ($scope.articles.length === 0) {
+            $scope.noMoreData = true;
+          }
+        };
         $scope.findOne = function() {
         	// Use the article 'get' method to send an appropriate GET request
             $scope.article = Articles.get({

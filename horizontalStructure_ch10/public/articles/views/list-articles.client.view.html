@@ -1,12 +1,13 @@
-<section data-ng-controller="ArticlesController" data-ng-init="find()">
-  <h1>Articles</h1>
-  <div infinite-scroll="getMoreData()">
-    <div data-ng-repeat="article in articles">
-      <a data-ng-href="#!/articles/{{article._id}}" data-ng-bind="article.title">
+<section data-ng-controller="ArticlesController" data-ng-init="find()" class="article">
+  <h1 class="article">Announcements and Stories</h1>
+  <div infinite-scroll="nextPage()" infinite-scroll-distance="0.1">
+    <div data-ng-repeat="article in articles" class="article">
+      <a class="article" data-ng-href="#!/articles/{{article._id}}" data-ng-bind="article.title">
       </a>
       <br>
-      <small data-ng-bind="article.created | data:'medium'"></small>
-      <small>/</small>
+      <small>Posted on</small>
+      <small data-ng-bind="article.created | date:'mediumDate'"></small>
+      <small>by</small>
       <small data-ng-bind="article.creator.fullName"></small>
       <p data-ng-bind="article.content"></p>
     </div>

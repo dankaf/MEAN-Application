@@ -1,1 +1,26 @@
-
+.article {
+  font-family: roboto;
+}
+h1.article {
+  font-family: roboto;
+	font-size: 50px;
+	letter-spacing: 10px;
+}
+div.article {
+  overflow: auto;
+  background-color: rgba(0,0,0, .1);
+  margin: auto;
+  padding: 15px;
+  width: 800px;
+  margin-top: 10px;
+  text-align: left;
+}
+a.article {
+  color: black;
+  font-family: roboto;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+a.article:hover {
+  color: rgb(136,136,136);
+}
