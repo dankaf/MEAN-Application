@@ -55,7 +55,11 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
           }
 
           $scope.busy = true;
+          console.log($scope.data.length);
+          console.log($scope.articles.length);
           $scope.articles = $scope.articles.concat($scope.allData.splice(page*step, step));
+          console.log($scope.data.length);
+          console.log($scope.articles.length);
           console.log($scope.articles[0].created);
           page++;
           $scope.busy = false;
