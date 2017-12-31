@@ -1,18 +1,41 @@
-<section data-ng-controller="ArticlesController">
-  <h1>New Article</h1>
+<style>
+  h1.createArticle {
+    font-family: roboto;
+    font-size: 50px;
+    letter-spacing: 10px;
+    border: 1px solid red;
+    margin-bottom: 0;
+  }
+
+  label.createArticle {
+    font-family: roboto;
+    font-size: 20px;
+    letter-spacing: 5px;
+    border: 1px solid red;
+    margin-top: 0;
+    margin-right: 15%;
+  }
+
+  input.createArticle {
+    border: 1px solid red;
+    width: 500px;
+  }
+</style>
+<section data-ng-controller="ArticlesController" class="createArticle">
+  <h1 class="createArticle">New Article</h1>
     <form data-ng-submit="create()" novalidate>
       <div>
-        <label for="title">Title</label>
+        <label for="title" class="createArticle">Title</label>
         <div>
           <input type="text" data-ng-model="title" id="title"
-          placeholder="Title" required>
+          placeholder="Title" class="createArticle" required>
         </div>
       </div>
       <div>
-        <label for="content">Content</label>
+        <label for="content" class="createArticle">Content</label>
         <div>
           <textarea data-ng-model="content" id="content" cols="30"
-          rows="10" placeholder="Content"></textarea>
+          rows="10" placeholder="Content" class="createArticle"></textarea>
         </div>
       </div>
       <div>
