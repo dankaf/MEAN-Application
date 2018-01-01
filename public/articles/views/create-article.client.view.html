@@ -3,27 +3,65 @@
     font-family: roboto;
     font-size: 50px;
     letter-spacing: 10px;
-    border: 1px solid red;
-    margin-bottom: 0;
+  }
+
+  div.createArticle {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 100px;
+  }
+
+  #title {
+    width: 500px;
+    font-size: 15px;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  #content {
+    width: 500px;
+    font-size: 15px;
+    resize: none;
+    border-radius: 1.5px;
+    border-color: rgb(213, 213, 213);
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   label.createArticle {
     font-family: roboto;
     font-size: 20px;
     letter-spacing: 5px;
-    border: 1px solid red;
-    margin-top: 0;
-    margin-right: 15%;
   }
 
-  input.createArticle {
-    border: 1px solid red;
-    width: 500px;
+  .sButton {
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 8px 50px;
+    margin: 0 auto;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: roboto;
+    letter-spacing: 5px;
+    position: relative;
+    left: 162px;
+  }
+
+  #error {
+    font-family: roboto;
+    font-size: 12px;
+    letter-spacing: 2px;
   }
 </style>
 <section data-ng-controller="ArticlesController" class="createArticle">
   <h1 class="createArticle">New Article</h1>
     <form data-ng-submit="create()" novalidate>
+      <div class="createArticle">
       <div>
         <label for="title" class="createArticle">Title</label>
         <div>
@@ -39,10 +77,11 @@
         </div>
       </div>
       <div>
-        <input type="submit">
+        <input type="submit" class="sButton">
       </div>
-      <div data-ng-show="error">
+      <div data-ng-show="error" id="error">
         <strong data-ng-bind="error"></strong>
       </div>
+    </div>
     </form>
 </section>
