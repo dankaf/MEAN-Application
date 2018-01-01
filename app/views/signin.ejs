@@ -1,29 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <title>
     <%=title %>
   </title>
   <style>
-    
+  body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgb(232,232,232);
+  }
+  ul {
+    padding: 20px;
+    background: rgba(0,0,0,.75);
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    text-align: left;
+  }
+  li {
+    display: inline;
+    padding: 20px;
+    margin-left: 350px;
+  }
+  a {
+    text-decoration:none;
+    color:white;
+    letter-spacing: 1px;
+  }
+  a:hover {
+    color: rgba(200,240,255,.6);
+  }
+
+  .bod {
+    background-color: rgb(250, 250, 250);
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: left;
+    display: inline-block;
+    overflow: auto;
+    border: 1px solid #ccc;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-top: 50px;
+    margin-left: 130px;
+    margin-bottom: 15px;
+    letter-spacing: -2px;
+    padding: 0;
+    color: rgba(0,0,0, .5);
+  }
+
+  .content {
+    margin-left: 130px;
+    margin-top: 5px;
+  }
+
+  .flas {
+    color: red;
+    font-size: 13px;
+  }
+
+  .input {
+    width: 250px;
+    height: 20px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+
+  .signin {
+    margin-bottom: 50px;
+    width: 150px;
+    height: 30px;
+    font-size: 15px;
+    border-width: 0;
+    background-color: rgba(0,0,0,.75);
+    color: white;
+  }
+
+
   </style>
 </head>
 <body>
-  <% for(var i in messages) { %>
-    <div class="flas"><%= messages[i] %></div>
-  <% } %>
+  <ul>
+    <li><a href="/">HOME</a></li>
+  </ul>
   <form action="/signin" method="post">
-    <div>
-      <label>Username:</label>
-      <input type="text" name="username" />
+    <div class="bod">
+    <h1>Log in to Troop 832</h1>
+    <% for(var i in messages) { %>
+      <div class="flas content"><%= messages[i] %></div>
+    <% } %>
+    <div class="content">
+      <input type="text" name="username" placeholder="Username" class="input" />
+    </div>
+    <div class="content">
+      <input type="password" name="password" placeholder="Password" class="input" />
+    </div>
+    <div class="content">
+      <input type ="submit" value="Sign In" class="signin"/>
     </div>
     <div>
-      <label>Password:</label>
-      <input type="password" name="password" />
-    </div>
-    <div>
-      <input type ="submit" value="Sign In" />
-    </div>
   </form>
 </body>
 </html>

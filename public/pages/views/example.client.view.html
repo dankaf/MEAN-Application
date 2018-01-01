@@ -35,11 +35,65 @@ a.top {
 a.top:hover {
   color: rgba(200,240,255,.6);
 }
+
+#shown {
+  display: none;
+  padding: 15px;
+  text-align: right;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 3px;
+  height: 10px;
+  background: rgba(0,0,0,.75);
+}
+
+#shown li {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  bottom: 5px;
+  letter-spacing: 3px;
+  font-weight: 550;
+  padding: 0 15px;
+}
+
+#shown li input {
+  position: relative;
+  bottom: 3px;
+}
+
+#enter {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 2px 20px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 550;
+  letter-spacing: 3px;
+}
 </style>
+<head>
+  <script src="../../lib/jquery/dist/jquery.min.js"></script>
+</head>
 <section ng-controller="ExampleController" class="top">
-  <ul data-ng-show="!authentication.user" class="top">
-    <li><a href="/signin" class="top">SIGNIN</a></li>
+  <ul data-ng-show="!authentication.user" class="top hide">
+    <li><a class="top" id="show">SIGNIN</a></li>
   </ul>
+  <form action="/signin" method="post">
+    <ul id="shown">
+      <li>
+        <input type="text" name="username" placeholder="Username"/>
+      </li>
+      <li>
+        <input type="password" name="password" placeholder="Password"/>
+      </li>
+      <li>
+        <input type ="submit" value="Sign In" id="enter"/>
+      </li>
+    </ul>
+  </form>
   <ul data-ng-show="authentication.user" class="top">
     <li class="top"><span data-ng-bind="authentication.user.fullName" class="top"></span><li>
     <li class="top"><a href="/signout">SIGNOUT</a></li>
@@ -47,3 +101,10 @@ a.top:hover {
     <li class="top"><a href="/#!/articles/create">CREATE ARTICLES</a></li>
   </ul>
 </section>
+
+<script>
+  $("#show").click(function() {
+    $(".hide").hide();
+    $("#shown").show();
+  });
+</script>
