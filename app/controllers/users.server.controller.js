@@ -24,7 +24,7 @@ var getErrorMessage = function(err) {
 exports.renderSignin = function(req, res, next) {
   if (!req.users) {
     res.render('signin', {
-      title: 'Sign-in | Troop 832',
+      title: 'About | Troop 832',
       messages: req.flash('error') || req.flash('info')
     });
   } else {
